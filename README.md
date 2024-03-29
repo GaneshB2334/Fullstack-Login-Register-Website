@@ -1,4 +1,4 @@
-# Fullstack Login and Registration Website
+# Fullstack Registration and Login Website
 
 This is a fullstack login and registration website project. It consists of two folders: `client` for the frontend and `server` for the backend.
 
