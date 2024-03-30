@@ -20,6 +20,9 @@ export default function Login() {
                 else if(result.data.message==="incorrect password"){
                     alert("Incorrect password")
                 }
+                else if(result.data.message === "invalid id"){
+                    alert("Invalid ID!")
+                }
             })
             .catch(error => { console.error(error) })
     }
