@@ -14,7 +14,7 @@ export default function Login() {
         await axios.post('http://localhost:3000/login', { email, password })
             .then(result => {
                 if(result.data.message==="success"){
-                    alert("Login Successful")
+                    alert(`Welcome ${result.data.name}\n Login Successful`)
                     navigate('/')
                 }
                 else if(result.data.message==="incorrect password"){
@@ -27,26 +27,26 @@ export default function Login() {
             .catch(error => { console.error(error) })
     }
     return (
-        <div className="border-black w-[70vw] m-auto flex flex-wrap border-2 justify-center items-center my-10">
+        <div className="bg-slate-600 w-[70vw] m-auto flex flex-wrap border-2 justify-center items-center my-10">
             <form onSubmit={handleSubmit} className="w-[60vw] my-5">
-                <div className="flex px-5 py-2 border-black border-2 justify-between items-center">
+                <div className="flex px-5 py-2 bg-slate-400 rounded-xl justify-between items-center my-4">
                     <label htmlFor="email">Email / Phone:</label>
                     <input
                         id="email"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-[45vw] bg-gray-400 rounded-lg p-2"
+                        className="w-[45vw] rounded-lg p-2"
                     />
                 </div>
-                <div className="relative flex px-5 py-2 border-black border-2 justify-between items-center">
+                <div className="relative flex px-5 py-2 bg-slate-400 rounded-xl justify-between items-center my-4">
                     <label htmlFor="password">Password:</label>
                     <input
                         id="password"
                         type={isChecked ? "text" : "password"}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="w-[45vw] bg-gray-400 rounded-lg p-2"
+                        className="w-[45vw] rounded-lg p-2"
                     />
                     <img className="absolute right-[30px] cursor-pointer h-[24px] w-[24px] " src={isChecked ? passvisible : passinvisible} onClick={() => { setIsChecked(!isChecked) }} alt="" />
                 </div>

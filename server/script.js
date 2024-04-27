@@ -41,8 +41,7 @@ app.post('/login', async (req, res) => {
         .then(user => {
             if (user) {
                 if (user.password == password) {
-                    // alert("login successful")
-                    res.json({ message: "success" })
+                    res.json({ message: "success", name : user.name })
                 }
                 else {
                     res.json({ message: "incorrect password" })
