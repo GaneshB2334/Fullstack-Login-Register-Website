@@ -14,6 +14,11 @@ mongoose.connect('mongodb://localhost:27017/my_database', {
 
 app.use(express.json()); //it is a express middleware to parse JSON
 app.use(cors())
+
+app.get('/',(req,res)=>{
+    res.send('hello')
+})
+
 app.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
